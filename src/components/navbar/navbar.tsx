@@ -1,12 +1,10 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
-import './navbar.scss'
 
 export default class Welcome extends React.Component {
     render() {
         return (
             <div
-                className="divNav"
             >
                 <Grid
                     container
@@ -15,10 +13,13 @@ export default class Welcome extends React.Component {
                     alignItems="flex-start"
 
                 >
-                    <h3>Ishe-bet</h3>
+                    <h3>Ishe-bet EM 2021</h3>
                     <p>Scoreboard</p>
                     <p>Bets</p>
-                    <p>Login</p>
+                    <p>Mitt Bet</p>
+                    <p
+                        onClick={()=> {console.log("hej")}}
+                    >Login</p>
                 </Grid>
             </div>
         )
