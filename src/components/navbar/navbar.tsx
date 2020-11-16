@@ -1,27 +1,51 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
+import Login from '../login/login'
 
-export default class Welcome extends React.Component {
+export default class Navbar extends React.Component {
     render() {
         return (
-            <div
-            >
-                <Grid
-                    container
-                    direction="row"
-                    justify="space-around"
-                    alignItems="flex-start"
-
+            <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+                <a 
+                    className=" navbar-brand"
+                    href="#"
                 >
-                    <h3>Ishe-bet EM 2021</h3>
-                    <p>Scoreboard</p>
-                    <p>Bets</p>
-                    <p>Mitt Bet</p>
-                    <p
-                        onClick={()=> {console.log("hej")}}
-                    >Login</p>
-                </Grid>
-            </div>
+                    Ishe-bet EM 2021
+                </a>
+                <div
+                    className="justify-content-right"
+                >
+                    <a
+                        className="navbar-brand "
+                        href="#"
+                    >
+                            Scoreboard
+                    </a>
+                    <a
+                        className="navbar-brand"
+                        href="#"
+                    >
+                            Bets
+                    </a>
+                    <a
+                        className="navbar-brand"
+                        href="#"
+                    >
+                        Mitt Bet
+                    </a>
+                    <a
+                        className="navbar-brand"
+                        href="#"
+                        onClick={()=> {
+                            <Login
+                                // isOpen={true}
+                            />
+                        }}
+                    >
+                        Login
+                    </a>
+                </div>
+            </nav>
         )
     }
 }
