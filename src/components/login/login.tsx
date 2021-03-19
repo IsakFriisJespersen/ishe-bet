@@ -1,6 +1,5 @@
 import React, { useState, EventHandler } from "react";
 import ReactDOM from "react-dom";
-import { useForm } from "react-hook-form";
 import LoginForm from './loginform'
 import Navbar from './navbar'
 import Signup from './signup'
@@ -21,10 +20,6 @@ export default class Login extends React.Component<any, any> {
         }
         return (
           <div>
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Login
-            </button>
-            
             <div className="modal fade" id="exampleModal" tabIndex={ -1 } role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
@@ -45,7 +40,6 @@ export default class Login extends React.Component<any, any> {
                 </div>
             </div>
             </div>
-
           </div>
       );
     }

@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Welcome from './components/homepage/homepage'
-import Bet2021 from './components/form/bet20201'
-import Login from './components/login/login'
-
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
 
 ReactDOM.render(
   <div>
-    <Welcome/>
-    <Bet2021/>
-    <Login/>
+    <Header/>
+    <Footer/>
   </div>,
     document.getElementById("root")
 );
