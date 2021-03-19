@@ -1,56 +1,52 @@
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import React from "react";
+import React, { useState, EventHandler } from "react";
+import ReactDOM from "react-dom";
+import { useForm } from "react-hook-form";
+import LoginForm from './loginform'
+import Navbar from './navbar'
+import Signup from './signup'
 
-export default class Login extends React.Component {
 
-    constructor(props:any) {
+export default class Login extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
-        this.state = {isOpen: true};
+        this.state = {
+          section: 'login'
+        };
       }
-    static getDerivedStateFromProps(props: any, state: any) {
-        return {isOpen: props.isOpen };
-    }
 
     render() {
-        return (
-          <>
-            {/* <Button variant="primary" onClick={() => setModalShow(true)}>
-              Launch vertically centered modal
-            </Button>
-       */}
-            <LoginModal
-              show={true}
-            />
-          </>
-        )
-
-        function LoginModal(props: any) {
-            return (
-                <Modal
-                    show={true}
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            Modal heading
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <h4>Centered Modal</h4>
-                        <p>
-                            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                            consectetur ac, vestibulum at eros.
-                        </p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={props.onHide}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-            )
+        const handleSectionChange = (e: any) => {
+            this.setState({ section: e.target.id})
+            console.log(e.target.id)
         }
+        return (
+          <div>
+            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Login
+            </button>
+            
+            <div className="modal fade" id="exampleModal" tabIndex={ -1 } role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Access</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div className="modal-body">
+                    <Navbar onSectionChange={handleSectionChange}/>
+                    {this.state.section == 'login' ? <LoginForm/> : <Signup/>}
+                </div>
+                <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+          </div>
+      );
     }
-}
+  }

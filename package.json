@@ -43,6 +43,7 @@
     "dependencies": {
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
-        "react-flex": "^2.2.8"
+        "react-flex": "^2.2.8",
+        "react-hook-form": "^6.15.4"
     }
 }
