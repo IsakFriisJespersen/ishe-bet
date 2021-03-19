@@ -12,7 +12,7 @@ export default class Login extends React.Component<any, any> {
           section: 'login'
         };
       }
-
+      
     render() {
         const handleSectionChange = (e: any) => {
             this.setState({ section: e.target.id})
