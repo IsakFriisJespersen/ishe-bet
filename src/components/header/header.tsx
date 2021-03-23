@@ -1,18 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Login from '../login/login';
+import Login from '../Login/login';
 
-export default function App() {
+export default function App(props: any) {
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
           <a className="navbar-brand" href="#">Ishe-bet EM21</a>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <a className="nav-link" href="#">Scoreboard</a>
+                <a className="nav-link" id="scoreboard" onClick={ props.onSectionChange } href="#">Scoreboard</a>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="#">My Bet</a>
+                <a className="nav-link" id="mybet" onClick={ props.onSectionChange } href="#">My Bet</a>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" id="admin" onClick={ props.onSectionChange } href="#">Admin</a>
               </li>
             </ul>
           </div>
